@@ -1,0 +1,16 @@
+Backend: SymPy 1.14.0 / DPLL2
+Comando: SUDOKU_BACKEND=sympy python -m unittest -v
+
+test_contagens (test_sudoku.SudokuTests.test_contagens) ... ok
+test_entrada_invalida (test_sudoku.SudokuTests.test_entrada_invalida) ... ok
+test_mapeamento (test_sudoku.SudokuTests.test_mapeamento) ... ok
+test_muitos_vazios (test_sudoku.SudokuTests.test_muitos_vazios) ... ok
+test_pistas_conflitantes (test_sudoku.SudokuTests.test_pistas_conflitantes) ... ok
+test_poucos_vazios (test_sudoku.SudokuTests.test_poucos_vazios) ... ok
+test_professor (test_sudoku.SudokuTests.test_professor) ... ok
+test_sem_solucao_sem_conflito_imediato (test_sudoku.SudokuTests.test_sem_solucao_sem_conflito_imediato) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 14.626s
+
+OK
