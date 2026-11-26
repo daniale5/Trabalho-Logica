@@ -1,4 +1,3 @@
-"""Sudoku 9x9 como problema SAT. Base: modelagem do professor Alexandre Arruda."""
 import argparse
 import json
 from itertools import combinations
