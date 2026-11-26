@@ -1,10 +1,11 @@
 # Sudoku SAT — Lógica para Computação
 
-Projeto acadêmico baseado no código de partida do professor Alexandre Arruda. O objetivo é modelar qualquer Sudoku clássico 9×9 como uma fórmula proposicional em Forma Normal Conjuntiva (CNF) e resolvê-lo com um SAT Solver.
+Projeto baseado no código de partida do professor Alexandre Arruda. O objetivo é modelar qualquer Sudoku clássico 9×9 como uma fórmula proposicional em Forma Normal Conjuntiva (CNF) e resolvê-lo com um SAT Solver.
 
 ## Integrantes
 
-Preencher com os nomes reais (máximo de três pessoas, conforme enunciado). Verificar as regras da disciplina sobre autoria e uso de IA antes do envio.
+1. Daniele Araújo Vieira
+2. Larissa Maria Rocha Souza
 
 ## Fundamentos e modelagem
 
@@ -115,8 +116,6 @@ O ambiente de desenvolvimento não disponibilizou a instalação de python-sat. 
 
 ## Referências e autoria
 
-- Alexandre Arruda, **Atividade de Lógica para Computação** e código inicial de sala, 2026.
+- Alexandre Arruda, Atividade de Lógica para Computação e código inicial de sala, 2026.
 - PySAT: https://pysathq.github.io/
 - SymPy: https://docs.sympy.org/
-
-A equipe deve revisar, compreender e adaptar o projeto, registrar as contribuições reais e respeitar as orientações de autoria do professor. O enunciado exige o envio, via SIGAA até 06/12/2026, de um arquivo contendo o link do repositório e do vídeo de apresentação.
