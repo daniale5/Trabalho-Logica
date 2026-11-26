@@ -1,16 +1,163 @@
-Backend: SymPy 1.14.0 / DPLL2
-Comando: SUDOKU_BACKEND=sympy python -m unittest -v
+REGISTRO DE TESTES E VALIDAÇÃO
+Projeto: Resolvedor de Sudoku utilizando Lógica Proposicional
+Disciplina: Lógica para Computação
 
-test_contagens (test_sudoku.SudokuTests.test_contagens) ... ok
-test_entrada_invalida (test_sudoku.SudokuTests.test_entrada_invalida) ... ok
-test_mapeamento (test_sudoku.SudokuTests.test_mapeamento) ... ok
-test_muitos_vazios (test_sudoku.SudokuTests.test_muitos_vazios) ... ok
-test_pistas_conflitantes (test_sudoku.SudokuTests.test_pistas_conflitantes) ... ok
-test_poucos_vazios (test_sudoku.SudokuTests.test_poucos_vazios) ... ok
-test_professor (test_sudoku.SudokuTests.test_professor) ... ok
-test_sem_solucao_sem_conflito_imediato (test_sudoku.SudokuTests.test_sem_solucao_sem_conflito_imediato) ... ok
+==================================================
+1. OBJETIVO DOS TESTES
+==================================================
 
-----------------------------------------------------------------------
-Ran 8 tests in 14.626s
+Verificar a consistência da modelagem proposicional, a geração das cláusulas CNF, o funcionamento do SAT Solver e a capacidade do programa de resolver diferentes configurações de Sudoku.
+
+Os testes também verificam o comportamento do programa diante de entradas inválidas, pistas contraditórias e tabuleiros impossíveis de solucionar.
+
+==================================================
+2. CASOS DE TESTE
+==================================================
+
+TESTE 01 - Contagem de variáveis e cláusulas
+
+Objetivo:
+Verificar se a modelagem gera a quantidade esperada de variáveis proposicionais e cláusulas.
+
+Resultado esperado:
+- 729 variáveis proposicionais.
+- 2.997 cláusulas referentes às células.
+- 2.997 cláusulas referentes às linhas.
+- 2.997 cláusulas referentes às colunas.
+- 2.997 cláusulas referentes aos quadrantes.
+- 30 cláusulas referentes às pistas iniciais.
+- Total de 12.018 cláusulas.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 02 - Entrada inválida
+
+Objetivo:
+Verificar o comportamento do programa diante de matrizes com dimensões incorretas e valores fora do domínio permitido.
+
+Casos considerados:
+- Matriz com 8 linhas.
+- Matriz com 8 colunas.
+- Células contendo o número 10.
+- Células contendo valores booleanos.
+
+Resultado esperado:
+Identificação da entrada inválida por meio de ValueError.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 03 - Mapeamento proposicional
+
+Objetivo:
+Verificar a correspondência entre os símbolos proposicionais e seus identificadores inteiros.
+
+Resultado esperado:
+- 729 identificadores distintos.
+- Ausência de duplicidade.
+- Correspondência correta entre os dois dicionários.
+- Conversão correta das coordenadas globais.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 04 - Sudoku com muitas células vazias
+
+Objetivo:
+Verificar se o programa consegue encontrar uma solução para um tabuleiro com apenas uma pista inicial.
+
+Resultado esperado:
+Encontrar uma solução que respeite todas as regras do Sudoku e preserve a pista fornecida.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 05 - Pistas conflitantes
+
+Objetivo:
+Verificar se o programa identifica contradições entre pistas iniciais.
+
+Procedimento:
+Inserção de dois números iguais na mesma linha do tabuleiro.
+
+Resultado esperado:
+Fórmula insatisfatível (UNSAT).
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 06 - Sudoku quase completo
+
+Objetivo:
+Verificar a resolução de um tabuleiro contendo apenas duas células vazias.
+
+Resultado esperado:
+Preenchimento correto das células restantes e preservação dos demais valores.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 07 - Sudoku disponibilizado pelo professor
+
+Objetivo:
+Resolver o tabuleiro apresentado no enunciado da atividade.
+
+Resultado esperado:
+- Preservação das 30 pistas originais.
+- Preenchimento das 51 células vazias.
+- Ausência de repetições nas linhas.
+- Ausência de repetições nas colunas.
+- Ausência de repetições nos quadrantes.
+- Satisfação de todas as cláusulas da fórmula.
+
+Resultado: APROVADO.
+
+--------------------------------------------------
+
+TESTE 08 - Sudoku sem solução e sem conflito imediato
+
+Objetivo:
+Verificar se o SAT Solver consegue identificar um tabuleiro impossível de solucionar, mesmo quando não existe uma repetição evidente entre as pistas iniciais.
+
+Resultado esperado:
+Fórmula insatisfatível (UNSAT).
+
+Resultado: APROVADO.
+
+==================================================
+3. EXECUÇÃO DOS TESTES
+==================================================
+
+Comando utilizado:
+
+python -m unittest -v
+
+Resultado informado na execução local:
+
+Ran 8 tests in 0.157s
 
 OK
+
+Total de testes: 8
+Testes aprovados: 8
+Testes com falhas: 0
+Testes com erros: 0
+
+==================================================
+4. CONCLUSÃO
+==================================================
+
+Os testes executados confirmam o funcionamento da implementação nos cenários avaliados.
+
+A modelagem apresenta consistência entre as variáveis proposicionais, as cláusulas CNF e as regras do Sudoku.
+
+O programa demonstrou capacidade de solucionar diferentes tabuleiros, preservar as pistas iniciais, identificar problemas insatisfatíveis e tratar entradas inválidas.
+
+A implementação encontra uma solução válida quando ela existe, mas não realiza a verificação de unicidade da solução.
